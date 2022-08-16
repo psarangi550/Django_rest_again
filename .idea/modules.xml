@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/django_rest_rev.iml" filepath="$PROJECT_DIR$/.idea/django_rest_rev.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../django_rev/.idea/django_rev.iml" filepath="$PROJECT_DIR$/../django_rev/.idea/django_rev.iml" />
     </modules>
   </component>
 </project>
