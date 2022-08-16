@@ -9,7 +9,7 @@ class PeopleSerializer(serializers.ModelSerializer):
 
 
 class ColorSerializer(serializers.ModelSerializer):
-    people = PeopleSerializer()
+    # people = PeopleSerializer()
     people_id = serializers.SerializerMethodField()
 
     def get_people_id(self, obj):
