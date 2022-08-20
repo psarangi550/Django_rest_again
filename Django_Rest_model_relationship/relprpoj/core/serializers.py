@@ -6,17 +6,18 @@ class PeopleSerializer(serializers.ModelSerializer):
     class Meta:
         model = People
         fields = ["name"]
+        extra_kwargs = {"name": {"required": True}}
 
 
 class ColorSerializer(serializers.ModelSerializer):
-    # people = PeopleSerializer()
-    people_id = serializers.SerializerMethodField()
+    people = PeopleSerializer()
+    people_age = serializers.SerializerMethodField()
 
-    def get_people_id(self, obj):
-        person_id=Color.objects.get(id=obj.people.id)
-        return {"id":person_id.id}
+    def get_people_age(self, obj):
+        color_id = Color.objects.get(id=obj.people.id)
+        return {"age": color_id.people.age}
 
     class Meta:
         model = Color
         fields = "__all__"
-        depth = 1
+        # depth = 1
